@@ -13,4 +13,12 @@ class Monster extends Model
         'attackPower',
         'defensePower',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function card()
+    {
+        return $this->belongsTo(Card::class);
+    }
 }

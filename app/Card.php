@@ -10,4 +10,12 @@ class Card extends Model
     // [실행] Playground에 두 장의 닫힌 카드를 전달한다.
     // [실행] 카드를 연다.
     // [실행] 승패를 기록한다
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function monster()
+    {
+        return $this->hasOne(Monster::class);
+    }
 }
