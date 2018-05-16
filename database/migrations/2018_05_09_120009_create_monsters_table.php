@@ -19,7 +19,6 @@ class CreateMonstersTable extends Migration
             $table->integer('attack_power');
             $table->integer('defense_power');
             $table->integer('card_id');
-            $table->timestamps();
         });
     }
 
