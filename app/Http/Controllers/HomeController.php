@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Card;
+use App\Monster;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $monster = new Monster();
+
+        $card = new Card(['monster' => $monster->getRandomMonster()]);
+        $card2 = new Card(['monster' => $monster->getRandomMonster()]);
+
+        return view('home', [
+            'monster' => $card->monster,
+            'monster2' => $card2->monster,
+        ]);
     }
 }
