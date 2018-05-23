@@ -13,47 +13,39 @@
 </head>
 <body>
     <div id="app">
-        <nav>
-            <div>
-                <a href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+        <div class="site-header">
+            <p class="site-title">
+                <a href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+            </p>
 
-                <div>
-                    <!-- Left Side Of Navbar -->
-                    <ul>
+            <nav class="nav-top">
+                <ul>
+                    <!-- Authentication Links -->
+                    @guest
+                        <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                        <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                    @else
+                        <li>
+                            <a href="#">
+                                {{ Auth::user()->name }}
+                            </a>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul>
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                        @else
-                            <li>
-                                <a href="#">
-                                    {{ Auth::user()->name }}
+                            <div>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
 
-                                <div>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </nav>
+        </div>
         <main>
             @yield('content')
         </main>

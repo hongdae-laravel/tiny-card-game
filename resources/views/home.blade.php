@@ -1,14 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
     @if (session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
     @endif
-    <p>{{ $monster->name }}</p>
-    <p>{{ $monster2->name }}</p>
-    You are logged in!
-</div>
+    <div class="cards">
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="card-header">
+                    <p>{{ $monster->name }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="card-header">
+                    <p>{{ $monster2->name }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 @endsection
