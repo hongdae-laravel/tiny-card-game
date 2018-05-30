@@ -9,7 +9,9 @@ body {
 * {
   box-sizing: border-box;
 }
-
+img {
+  max-width: 100%;
+}
 // temp
 .temp-container {
   line-height: 4rem;
@@ -52,13 +54,13 @@ body {
 }
 // card
 .card-wrapper {
+  position: relative;
   padding: 1.2rem;
-  width: 12rem;
-  height: 16rem;
+  width: 18rem;
+  height: 22rem;
   .card {
     height: 100%;
-    //border: 1px solid #aaa;
-    background-color: beige;
+    border: 1px solid #aaa;
     box-shadow: 0 0.2rem 0.4rem #999;
     .card-header {
       border-bottom: 1px dotted #666;
@@ -69,6 +71,30 @@ body {
         text-align: center;
       }
     }
-
+    .card-body {
+    }
+    .card-footer {
+      .point {
+        display: block;
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 2.7rem;
+        text-align: center;
+        bottom: 2.5rem;
+        border: 0;
+        border-radius: 1.25rem;
+        font-size: 1.5rem;
+        color: white;
+      }
+      .point-attack {
+        left: 2.5rem;
+        background-color: red;
+      }
+      .point-defense {
+        right: 2.5rem;
+        background-color: blue;
+      }
+    }
   }
 }
