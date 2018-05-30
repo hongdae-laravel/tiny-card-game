@@ -12,6 +12,7 @@ class Monster extends Model
 
     protected $fillable = [
         'name',
+        'imageUrl',
         'attackPower',
         'defensePower',
     ];
