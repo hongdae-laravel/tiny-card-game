@@ -24,10 +24,4 @@ class Monster extends Model
     {
         return $this->belongsTo(Card::class);
     }
-
-    public function getRandomMonster()
-    {
-        $random = mt_rand(1, 12);
-        return Monster::find($random);
-    }
 }
