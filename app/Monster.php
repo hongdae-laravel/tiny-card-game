@@ -12,9 +12,9 @@ class Monster extends Model
 
     protected $fillable = [
         'name',
-        'imageUrl',
-        'attackPower',
-        'defensePower',
+        'image_url',
+        'attack_power',
+        'defense_power',
     ];
 
     /**
