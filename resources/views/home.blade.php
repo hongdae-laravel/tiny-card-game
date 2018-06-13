@@ -36,4 +36,7 @@
             </div>
         </div>
     </div>
+    <div class="game-info">
+        <p>Choose a card.</p>
+    </div>
 @endsection
