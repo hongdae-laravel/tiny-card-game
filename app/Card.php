@@ -13,7 +13,10 @@ class Card extends Model
     // [상태] 승패 기록
     // [상태] 몬스터 아이디
 
-    protected $fillable= ['monster'];
+    protected $fillable= [
+        'side',
+        'moster_id',
+    ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
