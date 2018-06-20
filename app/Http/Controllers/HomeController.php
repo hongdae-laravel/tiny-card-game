@@ -25,15 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // Todo: 두 장의 카드를 배열에 담아서 뷰에 넘긴다.
-        // Todo: 카드가 놓인 면(side)에 따라 다르게 보여준다.
-
-        $card = Card::find(mt_rand(1, 12));
-        $card2 = Card::find(mt_rand(1, 12));
+        $cards = Card::orderByRaw('RAND()')->take(2)->get();
 
         return view('home', [
-            'card' => $card,
-            'card2' => $card2,
+            'cards' => $cards
         ]);
     }
 }

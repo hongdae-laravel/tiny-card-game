@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('playground', 'PlaygroundController');
+Route::post('card/pick', 'CardController@pick')->name('card.pick');
+Route::resource('card', 'CardController');

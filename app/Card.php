@@ -16,6 +16,7 @@ class Card extends Model
     protected $fillable= [
         'side',
         'moster_id',
+        'side'
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
